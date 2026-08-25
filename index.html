@@ -1,253 +1,1231 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="scroll-smooth">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EzyCommunity - Build Your Community with 0% Transaction Fees</title>
+
+    <title>EzyCommunity Review — Build Your Own Community & Keep 100% of Your Sales</title>
+
+    <meta name="description"
+          content="Build a branded online community with courses, memberships, events, gamification and live streaming. Start your EzyCommunity free trial with no credit card required.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #c084fc, #facc15);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-glow {
+            box-shadow:
+                0 0 80px rgba(99, 102, 241, .20),
+                0 0 140px rgba(168, 85, 247, .10);
+        }
+
+        .card-hover {
+            transition: all .25s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(15, 23, 42, .10);
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased pb-16 sm:pb-0">
 
-    <!-- Hero Section -->
-    <header class="bg-gradient-to-b from-slate-950 via-indigo-950 to-indigo-900 text-white py-20 px-4 sm:px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="inline-block bg-indigo-500/20 text-indigo-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-indigo-400/30 shadow-inner">
-                🚀 The Ultimate All-in-One Platform for Creators & Coaches
-            </span>
-            <h1 class="text-3xl sm:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-                Build Your Online Community & Mobile App with <span class="text-yellow-400 underline decoration-yellow-400/40 decoration-wavy">0% Transaction Fees</span>
-            </h1>
-            <p class="text-lg sm:text-xl text-slate-300 mb-10 max-w-2xl mx-auto font-normal leading-relaxed">
-                Host your courses, vibrant community, and live streams under your own custom domain & branded mobile app without giving away a single dollar of your revenue.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="Https://ezycommunity.com/?via=baby" target="_blank" rel="noopener noreferrer" 
-                   class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-lg px-8 py-4 rounded-xl shadow-xl hover:shadow-yellow-400/20 transition-all transform hover:-translate-y-1">
-                    🚀 Start Your Free Trial
-                </a>
-            </div>
-            <div class="flex items-center justify-center gap-6 mt-8 text-xs text-slate-400">
-                <span class="flex items-center gap-1">✓ No Credit Card Required</span>
-                <span class="flex items-center gap-1">✓ Instant 60s Setup</span>
-                <span class="flex items-center gap-1">✓ Cancel Anytime</span>
-            </div>
-        </div>
-    </header>
 
-    <!-- Interactive ROI Calculator Section -->
-    <section class="py-16 px-4 bg-white border-b border-slate-200">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">💰 How Much Will You Save Every Year?</h2>
-            <p class="text-slate-600 mb-8 text-sm">Drag the slider to see your estimated savings compared to platforms taking 5% - 10% cuts.</p>
-            
-            <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
-                <label for="revenueSlider" class="block font-bold text-slate-700 mb-2">Estimated Monthly Revenue: <span id="revenueValue" class="text-indigo-600 font-extrabold text-xl">$5,000</span></label>
-                <input type="range" id="revenueSlider" min="1000" max="50000" step="1000" value="5000" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 mb-6">
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-6 rounded-xl border border-slate-200">
-                    <div>
-                        <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold mb-1">Fees Paid Elsewhere (5%)</p>
-                        <p id="feesAmount" class="text-2xl font-bold text-rose-500">$3,000 / yr</p>
-                    </div>
-                    <div class="border-t sm:border-t-0 sm:border-l border-slate-200 pt-4 sm:pt-0">
-                        <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold mb-1">Your Savings with EzyCommunity</p>
-                        <p id="savingsAmount" class="text-2xl font-extrabold text-emerald-600">$3,000 / yr 🔥</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<body class="bg-slate-50 text-slate-900 antialiased pb-20 sm:pb-0">
 
-    <!-- Comparison Section -->
-    <section class="py-16 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-center mb-4 text-slate-900">Why Top Creators Are Switching</h2>
-        <p class="text-center text-slate-600 mb-12 max-w-xl mx-auto text-sm">Compare features and see why EzyCommunity is the smart white-label choice.</p>
 
-        <div class="overflow-x-auto shadow-xl rounded-2xl bg-white border border-slate-200">
-            <table class="w-full text-left border-collapse">
-                <thead>
-                    <tr class="bg-slate-100 border-b border-slate-200 text-slate-700">
-                        <th class="p-4 sm:p-5 font-bold">Feature / Platform</th>
-                        <th class="p-4 sm:p-5 font-bold text-indigo-600 bg-indigo-50/50">EzyCommunity</th>
-                        <th class="p-4 sm:p-5 font-bold text-slate-500">Skool / Circle</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-200 text-sm">
-                    <tr>
-                        <td class="p-4 sm:p-5 font-semibold">Transaction Fees</td>
-                        <td class="p-4 sm:p-5 font-bold text-emerald-600 bg-indigo-50/30">0% (Keep 100% Profits)</td>
-                        <td class="p-4 sm:p-5 text-rose-500">2.9% - 10% Cut per sale</td>
-                    </tr>
-                    <tr>
-                        <td class="p-4 sm:p-5 font-semibold">Custom Branded Mobile App</td>
-                        <td class="p-4 sm:p-5 font-bold text-indigo-600 bg-indigo-50/30">Included (iOS & Android)</td>
-                        <td class="p-4 sm:p-5 text-slate-500">Shared platform app only</td>
-                    </tr>
-                    <tr>
-                        <td class="p-4 sm:p-5 font-semibold">Custom Domain (White-Label)</td>
-                        <td class="p-4 sm:p-5 font-bold text-indigo-600 bg-indigo-50/30">Included Free</td>
-                        <td class="p-4 sm:p-5 text-slate-500">High-tier plans required</td>
-                    </tr>
-                    <tr>
-                        <td class="p-4 sm:p-5 font-semibold">Built-in Live Streaming</td>
-                        <td class="p-4 sm:p-5 font-bold text-indigo-600 bg-indigo-50/30">Fully Integrated</td>
-                        <td class="p-4 sm:p-5 text-slate-500">Requires paid Zoom integration</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+<!-- =========================================================
+     AFFILIATE DISCLOSURE
+========================================================== -->
 
-    <!-- Expanded Features Grid -->
-    <section class="py-16 bg-slate-100 px-4 sm:px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12">Everything You Need to Scale Your Digital Empire</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="text-3xl mb-3">📚</div>
-                    <h3 class="text-lg font-bold mb-2">Course Hosting</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Upload video lessons, downloadable resources, and quizzes with full content protection.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="text-3xl mb-3">💬</div>
-                    <h3 class="text-lg font-bold mb-2">Engaging Community</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Discussion feeds, spaces, and chat rooms designed for high member retention.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="text-3xl mb-3">📲</div>
-                    <h3 class="text-lg font-bold mb-2">Branded Mobile App</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Get your own custom app published on Apple Store & Google Play for your members.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="text-3xl mb-3">🎮</div>
-                    <h3 class="text-lg font-bold mb-2">Gamification & Rewards</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Level up system, badges, and leaderboards to keep students coming back daily.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="text-3xl mb-3">📹</div>
-                    <h3 class="text-lg font-bold mb-2">Native Live Streaming</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Host webinars and interactive Q&A sessions without paying for external Zoom accounts.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="text-3xl mb-3">⚡</div>
-                    <h3 class="text-lg font-bold mb-2">Email Automations</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Send broadcast emails and automatic onboarding sequences directly from your dashboard.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="bg-slate-950 text-slate-400 text-xs text-center px-4 py-2">
+    Affiliate disclosure: We may earn a commission if you sign up through our links,
+    at no additional cost to you.
+</div>
 
-    <!-- Social Proof / Testimonials Section -->
-    <section class="py-16 px-4 sm:px-6 max-w-5xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-center mb-10">Loved by Creators Worldwide</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                <div class="text-yellow-400 mb-3">★★★★★</div>
-                <p class="text-slate-700 text-sm mb-4 leading-relaxed">"Switching to EzyCommunity saved me over $400/month in platform fees alone. Having my own iOS app is huge!"</p>
-                <div class="font-bold text-slate-900 text-sm">— Mark R., Fitness Coach</div>
-            </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                <div class="text-yellow-400 mb-3">★★★★★</div>
-                <p class="text-slate-700 text-sm mb-4 leading-relaxed">"The 0% transaction fee model allowed me to reinvest 100% of my course profits back into paid advertising."</p>
-                <div class="font-bold text-slate-900 text-sm">— Sarah K., Digital Educator</div>
-            </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                <div class="text-yellow-400 mb-3">★★★★★</div>
-                <p class="text-slate-700 text-sm mb-4 leading-relaxed">"Setup took less than 10 minutes. My students love the clean UI and the gamification leaderboards."</p>
-                <div class="font-bold text-slate-900 text-sm">— David L., Tech Mentor</div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQ Section Accordion -->
-    <section class="py-16 bg-slate-100 px-4 sm:px-6">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-center mb-10">Frequently Asked Questions</h2>
-            
-            <div class="space-y-4">
-                <div class="bg-white rounded-xl border border-slate-200 p-4 cursor-pointer faq-item">
-                    <div class="flex justify-between items-center font-bold text-slate-900">
-                        <span>Is there really a 0% transaction fee?</span>
-                        <span class="text-indigo-600 font-bold text-xl">+</span>
-                    </div>
-                    <p class="text-slate-600 text-sm mt-3 hidden leading-relaxed">Yes! EzyCommunity charges 0% transaction fees on your sales. You connect your own payment gateway (Stripe/PayPal) and keep 100% of your earnings.</p>
-                </div>
-                <div class="bg-white rounded-xl border border-slate-200 p-4 cursor-pointer faq-item">
-                    <div class="flex justify-between items-center font-bold text-slate-900">
-                        <span>Do I need technical or coding skills?</span>
-                        <span class="text-indigo-600 font-bold text-xl">+</span>
-                    </div>
-                    <p class="text-slate-600 text-sm mt-3 hidden leading-relaxed">Not at all. EzyCommunity is a visual drag-and-drop platform. You can launch your entire academy and community in less than an hour.</p>
-                </div>
-                <div class="bg-white rounded-xl border border-slate-200 p-4 cursor-pointer faq-item">
-                    <div class="flex justify-between items-center font-bold text-slate-900">
-                        <span>Can I use my own Custom Domain name?</span>
-                        <span class="text-indigo-600 font-bold text-xl">+</span>
-                    </div>
-                    <p class="text-slate-600 text-sm mt-3 hidden leading-relaxed">Yes, you can fully white-label your platform and connect your custom domain (e.g., academy.yourbrand.com).</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- =========================================================
+     HERO
+========================================================== -->
 
-    <!-- Bottom CTA Section -->
-    <section class="py-20 px-4 text-center bg-indigo-950 text-white">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Stop Losing Revenue to High Fees Today</h2>
-            <p class="text-slate-300 mb-8 text-lg">Join thousands of creators taking 100% control over their digital community.</p>
-            <a href="Https://ezycommunity.com/?via=baby" target="_blank" rel="noopener noreferrer" 
-               class="inline-block bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-lg px-10 py-4 rounded-xl shadow-xl transition-all transform hover:-translate-y-1">
-                👉 Start Free Trial on EzyCommunity Now
-            </a>
-        </div>
-    </section>
+<header class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 text-white">
 
-    <!-- Sticky Mobile CTA Bar -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-3 sm:hidden z-50 flex items-center justify-between shadow-2xl">
-        <div class="text-xs font-bold text-slate-800">
-            0% Fees • Free Trial
-        </div>
-        <a href="Https://ezycommunity.com/?via=baby" target="_blank" rel="noopener noreferrer" 
-           class="bg-yellow-400 text-slate-950 font-bold text-sm px-5 py-2.5 rounded-lg shadow">
-            Try Free Now ➔
-        </a>
+    <div class="absolute inset-0 opacity-30">
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-indigo-600 rounded-full blur-3xl"></div>
+        <div class="absolute top-20 right-0 w-96 h-96 bg-purple-600 rounded-full blur-3xl"></div>
     </div>
 
-    <!-- Footer -->
-    <footer class="py-6 text-center text-slate-500 text-xs bg-slate-950">
-        <p>© 2026 All rights reserved. Independent affiliate promotional page for EzyCommunity.</p>
-    </footer>
 
-    <!-- Interactive Scripts -->
-    <script>
-        // Savings Calculator Script
-        const slider = document.getElementById('revenueSlider');
-        const revenueVal = document.getElementById('revenueValue');
-        const feesAmount = document.getElementById('feesAmount');
-        const savingsAmount = document.getElementById('savingsAmount');
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-28">
 
-        slider.addEventListener('input', (e) => {
-            const val = parseInt(e.target.value);
-            revenueVal.innerText = '$' + val.toLocaleString();
-            const yearlyFees = (val * 0.05 * 12);
-            feesAmount.innerText = '$' + yearlyFees.toLocaleString() + ' / yr';
-            savingsAmount.innerText = '$' + yearlyFees.toLocaleString() + ' / yr 🔥';
-        });
+        <div class="max-w-4xl mx-auto text-center">
 
-        // FAQ Accordion Script
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const p = item.querySelector('p');
-                const span = item.querySelector('span:last-child');
-                p.classList.toggle('hidden');
-                span.innerText = p.classList.contains('hidden') ? '+' : '−';
-            });
-        });
-    </script>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                        bg-white/10 border border-white/10 text-indigo-200
+                        text-xs sm:text-sm font-bold mb-7">
+
+                🚀 All-in-one community platform for creators
+            </div>
+
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold
+                       leading-tight tracking-tight">
+
+                Build Your Community.
+
+                <span class="gradient-text">
+                    Keep More of What You Earn.
+                </span>
+
+            </h1>
+
+
+            <p class="mt-7 text-lg sm:text-xl text-slate-300
+                      max-w-3xl mx-auto leading-relaxed">
+
+                Create a branded community with courses, memberships,
+                events, chat, gamification and live streaming —
+                without paying EzyCommunity a percentage of your sales.
+            </p>
+
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+
+                <a href="https://ezycommunity.com/?via=baby"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="bg-yellow-400 hover:bg-yellow-300 text-slate-950
+                          font-extrabold text-lg px-8 py-4 rounded-xl
+                          shadow-xl transition hover:-translate-y-1">
+
+                    Start Free Trial →
+                </a>
+
+
+                <a href="#features"
+                   class="border border-white/20 bg-white/5 hover:bg-white/10
+                          font-bold text-lg px-8 py-4 rounded-xl transition">
+
+                    Explore Features
+                </a>
+
+            </div>
+
+
+            <div class="flex flex-wrap justify-center gap-x-7 gap-y-3
+                        mt-8 text-sm text-slate-400">
+
+                <span>✓ 14-day trial</span>
+                <span>✓ No credit card</span>
+                <span>✓ 0% platform transaction fee</span>
+                <span>✓ Custom domain</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product preview -->
+
+        <div class="max-w-5xl mx-auto mt-16">
+
+            <div class="bg-white/10 border border-white/10 rounded-3xl
+                        p-2 sm:p-3 hero-glow backdrop-blur">
+
+                <div class="bg-slate-900 rounded-2xl overflow-hidden">
+
+                    <div class="flex items-center gap-2 px-5 py-4 border-b border-white/10">
+
+                        <span class="w-3 h-3 bg-red-400 rounded-full"></span>
+                        <span class="w-3 h-3 bg-yellow-400 rounded-full"></span>
+                        <span class="w-3 h-3 bg-green-400 rounded-full"></span>
+
+                        <div class="ml-3 text-xs text-slate-500">
+                            Your branded community
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-12 min-h-[280px] sm:min-h-[420px]">
+
+                        <div class="hidden sm:block col-span-3 bg-slate-950 p-6">
+
+                            <div class="font-bold text-white mb-8">
+                                Your Brand
+                            </div>
+
+                            <div class="space-y-4 text-sm text-slate-500">
+                                <div class="text-indigo-400">Community</div>
+                                <div>Courses</div>
+                                <div>Events</div>
+                                <div>Members</div>
+                                <div>Chat</div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-span-12 sm:col-span-9 p-5 sm:p-8">
+
+                            <div class="h-5 w-40 bg-slate-700 rounded mb-6"></div>
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+
+                                <div class="h-40 bg-gradient-to-br
+                                            from-indigo-500/30 to-purple-500/20
+                                            rounded-2xl border border-white/10"></div>
+
+                                <div class="h-40 bg-gradient-to-br
+                                            from-emerald-500/20 to-cyan-500/20
+                                            rounded-2xl border border-white/10"></div>
+
+                                <div class="h-20 bg-slate-800 rounded-xl"></div>
+                                <div class="h-20 bg-slate-800 rounded-xl"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="text-center text-xs text-slate-500 mt-4">
+                Product preview — features and interface may change over time.
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     TRUST STRIP
+========================================================== -->
+
+<section class="bg-white border-b border-slate-200">
+
+    <div class="max-w-6xl mx-auto px-5 py-7">
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+
+            <div>
+                <div class="text-2xl font-extrabold text-indigo-600">0%</div>
+                <div class="text-xs text-slate-500 mt-1">Platform transaction fee</div>
+            </div>
+
+            <div>
+                <div class="text-2xl font-extrabold text-indigo-600">14 days</div>
+                <div class="text-xs text-slate-500 mt-1">Free trial</div>
+            </div>
+
+            <div>
+                <div class="text-2xl font-extrabold text-indigo-600">Unlimited</div>
+                <div class="text-xs text-slate-500 mt-1">Members on Pro</div>
+            </div>
+
+            <div>
+                <div class="text-2xl font-extrabold text-indigo-600">iOS + Android</div>
+                <div class="text-xs text-slate-500 mt-1">Branded app option</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     VALUE PROPOSITION
+========================================================== -->
+
+<section class="py-20 px-5 bg-white">
+
+    <div class="max-w-6xl mx-auto">
+
+        <div class="max-w-3xl mx-auto text-center mb-14">
+
+            <span class="text-indigo-600 font-bold text-sm uppercase tracking-wider">
+                One platform
+            </span>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">
+                Stop stitching together five different tools
+            </h2>
+
+            <p class="text-slate-600 mt-5 leading-relaxed">
+                EzyCommunity brings your community, courses, memberships,
+                events and engagement tools together under your brand.
+            </p>
+
+        </div>
+
+
+        <div id="features" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Feature -->
+
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="text-3xl mb-5">💬</div>
+
+                <h3 class="font-extrabold text-lg mb-2">
+                    Community
+                </h3>
+
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Posts, comments, reactions, polls, channels and member discussions
+                    in one place.
+                </p>
+
+            </div>
+
+
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="text-3xl mb-5">📚</div>
+
+                <h3 class="font-extrabold text-lg mb-2">
+                    Courses
+                </h3>
+
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Build courses with chapters, lessons, video, audio, PDFs,
+                    progress tracking and certificates.
+                </p>
+
+            </div>
+
+
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="text-3xl mb-5">💳</div>
+
+                <h3 class="font-extrabold text-lg mb-2">
+                    Paid Memberships
+                </h3>
+
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Sell memberships, paid channels and digital products
+                    through built-in checkout.
+                </p>
+
+            </div>
+
+
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="text-3xl mb-5">🎮</div>
+
+                <h3 class="font-extrabold text-lg mb-2">
+                    Gamification
+                </h3>
+
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Use XP, badges, levels and leaderboards to encourage
+                    members to participate.
+                </p>
+
+            </div>
+
+
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="text-3xl mb-5">🎥</div>
+
+                <h3 class="font-extrabold text-lg mb-2">
+                    Live Streaming
+                </h3>
+
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Host meetings and live streams directly inside your
+                    community.
+                </p>
+
+            </div>
+
+
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="text-3xl mb-5">🌐</div>
+
+                <h3 class="font-extrabold text-lg mb-2">
+                    Your Brand
+                </h3>
+
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Use your own custom domain and white-label branding
+                    to create a branded member experience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SAVINGS CALCULATOR
+========================================================== -->
+
+<section class="py-20 px-5 bg-slate-100">
+
+    <div class="max-w-4xl mx-auto">
+
+        <div class="text-center mb-10">
+
+            <span class="text-indigo-600 font-bold text-sm">
+                CALCULATOR
+            </span>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">
+                How much could a 0% platform fee save you?
+            </h2>
+
+            <p class="text-slate-600 mt-4">
+                Estimate the platform fee you would pay if another platform
+                charged 5% of your sales.
+            </p>
+
+        </div>
+
+
+        <div class="bg-white border border-slate-200 rounded-3xl
+                    p-6 sm:p-10 shadow-sm">
+
+            <label for="revenueSlider"
+                   class="block font-bold text-slate-700 mb-4">
+
+                Monthly sales:
+
+                <span id="revenueValue"
+                      class="text-indigo-600 text-xl ml-1">
+                    $5,000
+                </span>
+
+            </label>
+
+
+            <input
+                id="revenueSlider"
+                type="range"
+                min="1000"
+                max="100000"
+                step="1000"
+                value="5000"
+                class="w-full accent-indigo-600 cursor-pointer">
+
+
+            <div class="grid sm:grid-cols-2 gap-5 mt-8">
+
+                <div class="rounded-2xl bg-rose-50 border border-rose-100 p-6">
+
+                    <p class="text-xs uppercase tracking-wider
+                              font-bold text-rose-500">
+                        Example 5% platform fee
+                    </p>
+
+                    <p id="feesAmount"
+                       class="text-3xl font-extrabold text-rose-600 mt-2">
+                        $3,000 / year
+                    </p>
+
+                </div>
+
+
+                <div class="rounded-2xl bg-emerald-50 border border-emerald-100 p-6">
+
+                    <p class="text-xs uppercase tracking-wider
+                              font-bold text-emerald-600">
+                        Potential platform-fee savings
+                    </p>
+
+                    <p id="savingsAmount"
+                       class="text-3xl font-extrabold text-emerald-600 mt-2">
+                        $3,000 / year
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <p class="text-xs text-slate-500 mt-5">
+                Illustration only. This calculator assumes a 5% platform fee.
+                Payment processor fees such as Stripe are separate and still apply.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BRANDED APP
+========================================================== -->
+
+<section class="py-20 px-5 bg-slate-950 text-white">
+
+    <div class="max-w-6xl mx-auto">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+            <div>
+
+                <span class="text-indigo-400 font-bold text-sm uppercase">
+                    Optional branded app
+                </span>
+
+                <h2 class="text-3xl sm:text-5xl font-extrabold mt-3 leading-tight">
+                    Put your community
+                    <span class="text-yellow-400">
+                        on your members' home screen.
+                    </span>
+                </h2>
+
+                <p class="text-slate-300 mt-6 leading-relaxed">
+                    EzyCommunity offers a branded iOS and Android app
+                    as a paid add-on. Your logo, colors, community name
+                    and store listing can become part of the experience.
+                </p>
+
+
+                <div class="grid grid-cols-2 gap-4 mt-8">
+
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <div class="text-xl">📱</div>
+                        <div class="font-bold mt-2">iOS & Android</div>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <div class="text-xl">🔔</div>
+                        <div class="font-bold mt-2">Push notifications</div>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <div class="text-xl">🎨</div>
+                        <div class="font-bold mt-2">Your branding</div>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <div class="text-xl">🏪</div>
+                        <div class="font-bold mt-2">App Store listing</div>
+                    </div>
+
+                </div>
+
+
+                <a href="https://ezycommunity.com/branded-app"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-block mt-8 bg-white text-slate-950
+                          font-extrabold px-7 py-3.5 rounded-xl
+                          hover:bg-slate-100 transition">
+
+                    See Branded App →
+                </a>
+
+            </div>
+
+
+            <div class="relative">
+
+                <div class="bg-gradient-to-br from-indigo-500/30
+                            to-purple-500/20 rounded-3xl p-8
+                            border border-white/10">
+
+                    <div class="bg-slate-900 rounded-[2rem] p-5
+                                border border-white/10 shadow-2xl">
+
+                        <div class="h-8 w-8 rounded-xl bg-indigo-500 mb-6"></div>
+
+                        <div class="h-5 w-32 bg-slate-700 rounded mb-5"></div>
+
+                        <div class="space-y-4">
+
+                            <div class="h-24 rounded-2xl bg-indigo-500/20"></div>
+                            <div class="h-16 rounded-xl bg-slate-800"></div>
+                            <div class="h-16 rounded-xl bg-slate-800"></div>
+                            <div class="h-16 rounded-xl bg-slate-800"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRICING
+========================================================== -->
+
+<section class="py-20 px-5 bg-white">
+
+    <div class="max-w-6xl mx-auto">
+
+        <div class="text-center max-w-3xl mx-auto mb-12">
+
+            <span class="text-indigo-600 font-bold text-sm uppercase">
+                Current plans
+            </span>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">
+                Choose the plan that fits your stage
+            </h2>
+
+            <p class="text-slate-600 mt-4">
+                Pricing can change. Check the official pricing page before purchasing.
+            </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+
+            <!-- PRO -->
+
+            <div class="border-2 border-indigo-600 rounded-3xl p-7
+                        shadow-xl relative">
+
+                <span class="absolute -top-3 left-6 bg-indigo-600
+                             text-white text-xs font-bold px-3 py-1
+                             rounded-full">
+                    POPULAR
+                </span>
+
+                <h3 class="text-xl font-extrabold">
+                    Pro
+                </h3>
+
+                <p class="text-slate-500 text-sm mt-1">
+                    For solo creators launching a paid community.
+                </p>
+
+                <div class="mt-6">
+
+                    <span class="text-5xl font-extrabold">
+                        $87
+                    </span>
+
+                    <span class="text-slate-500">
+                        /month
+                    </span>
+
+                </div>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Annual billing
+                </p>
+
+
+                <ul class="space-y-3 mt-7 text-sm">
+
+                    <li>✓ Unlimited members</li>
+                    <li>✓ 10 courses</li>
+                    <li>✓ Unlimited events</li>
+                    <li>✓ Website builder</li>
+                    <li>✓ Custom domain</li>
+                    <li>✓ White-label branding</li>
+                    <li>✓ Gamification</li>
+                    <li>✓ Unlimited meetings</li>
+                    <li>✓ Unlimited live streaming</li>
+                    <li>✓ 500 GB storage</li>
+
+                </ul>
+
+
+                <a href="https://ezycommunity.com/?via=baby"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="block text-center mt-8 bg-indigo-600
+                          hover:bg-indigo-700 text-white
+                          font-extrabold py-4 rounded-xl transition">
+
+                    Start Free Trial
+                </a>
+
+            </div>
+
+
+            <!-- BUSINESS -->
+
+            <div class="border border-slate-200 rounded-3xl p-7">
+
+                <h3 class="text-xl font-extrabold">
+                    Business
+                </h3>
+
+                <p class="text-slate-500 text-sm mt-1">
+                    For growing creators who need more capacity.
+                </p>
+
+                <div class="mt-6">
+
+                    <span class="text-5xl font-extrabold">
+                        $197
+                    </span>
+
+                    <span class="text-slate-500">
+                        /month
+                    </span>
+
+                </div>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Annual billing
+                </p>
+
+
+                <ul class="space-y-3 mt-7 text-sm">
+
+                    <li>✓ Everything in Pro</li>
+                    <li>✓ Unlimited courses</li>
+                    <li>✓ Branded email notifications</li>
+                    <li>✓ Member API access</li>
+                    <li>✓ Weekly community digest</li>
+                    <li>✓ Larger meeting capacity</li>
+                    <li>✓ 1 TB storage</li>
+                    <li>✓ Up to 1,000 live viewers</li>
+
+                </ul>
+
+
+                <a href="https://ezycommunity.com/?via=baby"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="block text-center mt-8 border-2
+                          border-indigo-600 text-indigo-700
+                          hover:bg-indigo-50 font-extrabold
+                          py-4 rounded-xl transition">
+
+                    Start Free Trial
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="text-center mt-8">
+
+            <a href="https://ezycommunity.com/pricing"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="text-indigo-700 font-bold text-sm">
+
+                View all current pricing & limits →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     COMPARISON
+========================================================== -->
+
+<section class="py-20 px-5 bg-slate-100">
+
+    <div class="max-w-5xl mx-auto">
+
+        <div class="text-center mb-12">
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold">
+                EzyCommunity vs traditional community platforms
+            </h2>
+
+            <p class="text-slate-600 mt-4">
+                Focus on the features that matter when you're building your own brand.
+            </p>
+
+        </div>
+
+
+        <div class="overflow-x-auto bg-white rounded-3xl border
+                    border-slate-200 shadow-sm">
+
+            <table class="w-full min-w-[650px] text-left">
+
+                <thead>
+
+                    <tr class="bg-slate-900 text-white">
+
+                        <th class="p-5">Feature</th>
+
+                        <th class="p-5 text-indigo-300">
+                            EzyCommunity
+                        </th>
+
+                        <th class="p-5 text-slate-300">
+                            Other platforms
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody class="divide-y divide-slate-200 text-sm">
+
+                    <tr>
+                        <td class="p-5 font-bold">Community</td>
+                        <td class="p-5 text-emerald-600 font-bold">✓</td>
+                        <td class="p-5">✓</td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-5 font-bold">Courses</td>
+                        <td class="p-5 text-emerald-600 font-bold">✓</td>
+                        <td class="p-5">Depends on platform</td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-5 font-bold">Custom domain</td>
+                        <td class="p-5 text-emerald-600 font-bold">✓</td>
+                        <td class="p-5">Depends on plan</td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-5 font-bold">Gamification</td>
+                        <td class="p-5 text-emerald-600 font-bold">✓</td>
+                        <td class="p-5">Depends on platform</td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-5 font-bold">Branded mobile app</td>
+                        <td class="p-5 text-emerald-600 font-bold">
+                            Available as add-on
+                        </td>
+                        <td class="p-5">Varies</td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-5 font-bold">Platform transaction fee</td>
+                        <td class="p-5 text-emerald-600 font-bold">
+                            0%
+                        </td>
+                        <td class="p-5">
+                            Varies
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <p class="text-xs text-slate-500 text-center mt-5">
+            Comparison is intentionally general. Competitor pricing and features
+            change frequently; verify current terms directly with each provider.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PUBLIC PRODUCT FEEDBACK
+========================================================== -->
+
+<section class="py-20 px-5 bg-white">
+
+    <div class="max-w-5xl mx-auto">
+
+        <div class="text-center mb-12">
+
+            <span class="text-indigo-600 font-bold text-sm uppercase">
+                Transparency
+            </span>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">
+                See the product. Then decide.
+            </h2>
+
+            <p class="text-slate-600 max-w-2xl mx-auto mt-4">
+                Instead of anonymous testimonials, we prefer showing
+                publicly available product information and real interface examples.
+            </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-slate-50 rounded-3xl border border-slate-200 p-8">
+
+                <div class="text-3xl mb-5">🔎</div>
+
+                <h3 class="font-extrabold text-xl mb-3">
+                    Public product review
+                </h3>
+
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    A June 2026 article published on EzyCommunity's own site
+                    describes hands-on use of the platform and covers its feed,
+                    courses, library, events and chat.
+                </p>
+
+                <a href="https://ezycommunity.com/blog/ezycommunity"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-block mt-5 text-indigo-700 font-bold text-sm">
+
+                    Read the published review →
+                </a>
+
+            </div>
+
+
+            <div class="bg-slate-50 rounded-3xl border border-slate-200 p-8">
+
+                <div class="text-3xl mb-5">📱</div>
+
+                <h3 class="font-extrabold text-xl mb-3">
+                    See the branded app
+                </h3>
+
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Explore the official branded-app page to see the mobile
+                    experience, customization options, notifications, courses,
+                    events and store publishing process.
+                </p>
+
+                <a href="https://ezycommunity.com/branded-app"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-block mt-5 text-indigo-700 font-bold text-sm">
+
+                    Explore the app →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================== -->
+
+<section class="py-20 px-5 bg-slate-100">
+
+    <div class="max-w-3xl mx-auto">
+
+        <div class="text-center mb-12">
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold">
+                Frequently asked questions
+            </h2>
+
+        </div>
+
+
+        <div class="space-y-4">
+
+
+            <details class="bg-white rounded-2xl border border-slate-200 p-5">
+
+                <summary class="font-extrabold cursor-pointer">
+                    Is EzyCommunity really 0% transaction fee?
+                </summary>
+
+                <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                    EzyCommunity states that it charges 0% platform transaction
+                    fees. Payment processor fees, such as Stripe fees, are still
+                    separate and apply according to the processor's terms.
+                </p>
+
+            </details>
+
+
+            <details class="bg-white rounded-2xl border border-slate-200 p-5">
+
+                <summary class="font-extrabold cursor-pointer">
+                    Is the branded mobile app included?
+                </summary>
+
+                <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                    No. The branded iOS and Android app is currently offered
+                    as a paid add-on. The official pricing page lists
+                    $199/month, $149/month billed yearly, or $3,490 one-time.
+                </p>
+
+            </details>
+
+
+            <details class="bg-white rounded-2xl border border-slate-200 p-5">
+
+                <summary class="font-extrabold cursor-pointer">
+                    Do I need a credit card for the trial?
+                </summary>
+
+                <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                    The official pricing page currently states that the
+                    14-day free trial does not require a card.
+                </p>
+
+            </details>
+
+
+            <details class="bg-white rounded-2xl border border-slate-200 p-5">
+
+                <summary class="font-extrabold cursor-pointer">
+                    Can I use my own domain?
+                </summary>
+
+                <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                    Yes. Custom domain and white-label branding are included
+                    on the current Pro and Business plans.
+                </p>
+
+            </details>
+
+
+            <details class="bg-white rounded-2xl border border-slate-200 p-5">
+
+                <summary class="font-extrabold cursor-pointer">
+                    Is email automation available?
+                </summary>
+
+                <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+                    The official site currently marks Email Campaigns,
+                    Automation and EzyAI as "Coming soon", so we do not
+                    present them as fully available features.
+                </p>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================== -->
+
+<section class="py-24 px-5 bg-gradient-to-br from-indigo-950
+                via-slate-950 to-purple-950 text-white">
+
+    <div class="max-w-3xl mx-auto text-center">
+
+        <div class="text-4xl mb-6">
+            🚀
+        </div>
+
+        <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+            Ready to build a community
+            <span class="text-yellow-400">
+                you actually own?
+            </span>
+        </h2>
+
+        <p class="text-slate-300 text-lg mt-6 leading-relaxed">
+            Start with the 14-day free trial, explore the platform,
+            and decide if EzyCommunity fits your business.
+        </p>
+
+
+        <a href="https://ezycommunity.com/?via=baby"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-block mt-9 bg-yellow-400
+                  hover:bg-yellow-300 text-slate-950
+                  font-extrabold text-lg px-10 py-5
+                  rounded-xl shadow-2xl transition
+                  hover:-translate-y-1">
+
+            Start Your Free Trial →
+        </a>
+
+
+        <p class="text-xs text-slate-500 mt-5">
+            14-day trial · No credit card required
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MOBILE CTA
+========================================================== -->
+
+<div class="fixed bottom-0 left-0 right-0 z-50
+            sm:hidden bg-white border-t border-slate-200
+            p-3 shadow-2xl flex items-center justify-between gap-3">
+
+    <div>
+
+        <div class="font-extrabold text-sm">
+            Build your community
+        </div>
+
+        <div class="text-xs text-slate-500">
+            14-day free trial
+        </div>
+
+    </div>
+
+
+    <a href="https://ezycommunity.com/?via=baby"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="bg-yellow-400 text-slate-950
+              font-extrabold px-5 py-3 rounded-xl
+              text-sm whitespace-nowrap">
+
+        Try Free →
+    </a>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="bg-slate-950 text-slate-500 text-xs py-8 px-5">
+
+    <div class="max-w-5xl mx-auto text-center">
+
+        <p>
+            © 2026 Independent affiliate review page.
+        </p>
+
+        <p class="mt-2 max-w-2xl mx-auto leading-relaxed">
+
+            This is an independent promotional page and is not the official
+            EzyCommunity website. Product features, prices and availability
+            may change. Please verify current information on the official website.
+
+        </p>
+
+
+        <div class="flex justify-center gap-5 mt-4">
+
+            <a href="https://ezycommunity.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="hover:text-white">
+                Official Website
+            </a>
+
+            <a href="https://ezycommunity.com/pricing"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="hover:text-white">
+                Pricing
+            </a>
+
+            <a href="https://ezycommunity.com/branded-app"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="hover:text-white">
+                Branded App
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     CALCULATOR JS
+========================================================== -->
+
+<script>
+
+    const slider = document.getElementById("revenueSlider");
+    const revenueValue = document.getElementById("revenueValue");
+    const feesAmount = document.getElementById("feesAmount");
+    const savingsAmount = document.getElementById("savingsAmount");
+
+    function updateCalculator() {
+
+        const monthlyRevenue = Number(slider.value);
+
+        const yearlyFee =
+            monthlyRevenue * 12 * 0.05;
+
+        const formattedRevenue =
+            monthlyRevenue.toLocaleString("en-US");
+
+        const formattedFee =
+            Math.round(yearlyFee).toLocaleString("en-US");
+
+        revenueValue.textContent =
+            "$" + formattedRevenue;
+
+        feesAmount.textContent =
+            "$" + formattedFee + " / year";
+
+        savingsAmount.textContent =
+            "$" + formattedFee + " / year";
+
+    }
+
+    slider.addEventListener("input", updateCalculator);
+
+    updateCalculator();
+
+</script>
+
+
 </body>
 </html>
