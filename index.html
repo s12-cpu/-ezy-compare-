@@ -1,103 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>Pricing Comparison</title>
+  <meta charset="UTF-8" />
+  <title>مقارنة الخطط - اشترك الآن</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg:#f9f9f9;
+      --card:#ffffff;
+      --accent:#2a9d8f;
+      --accent-2:#e76f51;
+      --muted:#777;
+      --radius:10px;
     }
-    h1 {
-      text-align: center;
-      margin: 30px 0;
-      color: #333;
+    *{box-sizing:border-box}
+    body{
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background:var(--bg);
+      margin:0;
+      padding:24px 12px;
+      color:#222;
+      -webkit-font-smoothing:antialiased;
     }
-    .pricing-table {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      width: 90%;
-      margin: auto;
+    h1{
+      text-align:center;
+      margin:8px 0 22px;
+      color:#111;
+      font-size:1.6rem;
     }
-    .plan {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 20px;
-      text-align: center;
+
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+      align-items:start;
     }
-    .plan h2 {
-      color: #2a9d8f;
+
+    .plan{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:0 6px 18px rgba(15,15,15,0.06);
+      border:1px solid rgba(0,0,0,0.04);
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
     }
-    .price {
-      font-size: 2em;
-      font-weight: bold;
-      color: #e76f51;
-      margin: 15px 0;
+
+    .plan h2{ color:var(--accent); margin:0; font-size:1.15rem; }
+    .price{ font-size:1.9rem; color:var(--accent-2); font-weight:700; margin:6px 0; }
+    .features{ list-style:none; padding:0; margin:0; color:var(--muted); }
+    .features li{ padding:10px 0; border-top:1px solid #f1f1f1; display:flex; gap:10px; align-items:center; justify-content:center; }
+    .features li:first-child{ border-top:0; padding-top:0; }
+
+    /* CTA area */
+    .cta {
+      margin-top:12px;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:8px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
+      transition:transform .12s ease, box-shadow .12s ease;
+      border:0;
     }
-    ul li {
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+    .btn:active{ transform:translateY(1px); }
+    .btn-primary{
+      background:linear-gradient(180deg,var(--accent) 0%, #238a78 100%);
+      color:#fff;
+      box-shadow:0 6px 18px rgba(42,157,143,0.18);
     }
-    ul li span {
-      font-size: 1.2em;
+    .btn-primary:hover{ transform:translateY(-4px); box-shadow:0 12px 30px rgba(42,157,143,0.18); }
+
+    .btn-outline{
+      background:transparent;
+      color:var(--accent);
+      border:2px solid rgba(42,157,143,0.12);
     }
-    .highlight {
-      background: #ffe8d6;
-      border: 2px solid #e76f51;
+    .btn-outline:hover{ transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.06); }
+
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#fff6f2,#fff);
+      color:var(--accent-2);
+      font-weight:700;
+      font-size:0.85rem;
+      border:1px solid rgba(231,111,81,0.12);
     }
-    footer {
-      text-align: center;
-      margin: 20px;
-      font-size: 0.9em;
-      color: #555;
+
+    .highlight{
+      border:2px solid rgba(231,111,81,0.12);
+      background:linear-gradient(180deg,#fff7f3,#fff);
     }
+
+    footer{ text-align:center; margin:26px 0 6px; color:var(--muted); font-size:0.9rem; }
+
     /* Responsive */
-    @media (max-width: 768px) {
-      .pricing-table {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width:900px){
+      .pricing-grid{ grid-template-columns:1fr; max-width:720px; }
+      .features li{ justify-content:flex-start; padding-left:18px; }
+      .cta{ flex-direction:column; gap:10px; align-items:center; }
     }
   </style>
 </head>
 <body>
-  <h1>Compare Our Plans</h1>
-  <div class="pricing-table">
-    <div class="plan">
-      <h2>Basic Plan</h2>
-      <div class="price">$39/mo</div>
-      <ul>
-        <li><span>✅</span> Hosting Included</li>
-        <li><span>📧</span> Email Integration</li>
-        <li><span>🎓</span> Course Hosting</li>
-        <li><span>👤</span> Best for Individuals / Small Teams</li>
+  <h1>قارن بين خططنا واختر الأنسب</h1>
+
+  <div class="pricing-grid">
+    <!-- Basic Plan -->
+    <div class="plan" id="basic-plan">
+      <h2>الخطة الأساسية</h2>
+      <div class="price">$39<span style="font-size:0.6rem;color:var(--muted)">/شهر</span></div>
+      <ul class="features" aria-label="مميزات الخطة الأساسية">
+        <li><span>✅</span> استضافة مضمّنة</li>
+        <li><span>📧</span> بريد إلكتروني مدمج</li>
+        <li><span>🎓</span> استضافة الدورات</li>
+        <li><span>👤</span> مناسب للأفراد والفرق الصغيرة</li>
       </ul>
+
+      <div class="cta" role="group" aria-label="خيارات الاشتراك للخطة الأساسية">
+        <a class="btn btn-primary" href="#" aria-label="اشترك الآن بالخطة الأساسية">اشترك الآن</a>
+        <a class="btn btn-outline" href="#" aria-label="ابدأ تجربة مجانية للخطة الأساسية">جرّب مجانًا</a>
+      </div>
     </div>
-    <div class="plan highlight">
-      <h2>Pro Plan</h2>
-      <div class="price">$99/mo</div>
-      <ul>
-        <li><span>✅</span> Hosting Included</li>
-        <li><span>📧</span> Email Integration</li>
-        <li><span>🎓</span> Course Hosting</li>
-        <li><span>🏢</span> Best for Businesses / Large Teams</li>
+
+    <!-- Pro Plan -->
+    <div class="plan highlight" id="pro-plan">
+      <div style="display:flex;justify-content:center;gap:10px;align-items:center;">
+        <h2 style="margin:0">خطة Pro</h2>
+        <span class="badge">الأكثر مبيعًا</span>
+      </div>
+      <div class="price">$99<span style="font-size:0.6rem;color:var(--muted)">/شهر</span></div>
+      <ul class="features" aria-label="مميزات خطة Pro">
+        <li><span>✅</span> استضافة مضمّنة</li>
+        <li><span>📧</span> بريد إلكتروني مدمج</li>
+        <li><span>🎓</span> استضافة الدورات مع أدوات متقدمة</li>
+        <li><span>🏢</span> مناسب للشركات والفرق الكبيرة</li>
       </ul>
+
+      <div class="cta" role="group" aria-label="خيارات الاشتراك لخطة Pro">
+        <a class="btn btn-primary" href="#" aria-label="اشترك الآن بخطة Pro">اشترك الآن</a>
+        <a class="btn btn-outline" href="#" aria-label="ابدأ تجربة مجانية لخطة Pro">جرّب مجانًا</a>
+      </div>
     </div>
   </div>
-  <footer>
-    © 2026 Skool Pricing Comparison
-  </footer>
+
+  <footer>© 2026 Skool Pricing Comparison</footer>
+
+  <script>
+    // اختياري: مثال بسيط لالتقاط نقرات الأزرار (يمكن استبدال href بروابط فعلية)
+    document.querySelectorAll('.btn-primary').forEach(btn=>{
+      btn.addEventListener('click', function(e){
+        if(this.getAttribute('href') === '#'){
+          e.preventDefault();
+          const plan = this.closest('.plan').querySelector('h2').textContent.trim();
+          alert('تم اختيار: ' + plan + '\nاستبدل رابط "#" برابط صفحة الدفع أو التسجيل لديك.');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
