@@ -1,175 +1,1165 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>مقارنة الخطط - اشترك الآن</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مقارنة الخطط والأسعار | اختر الخطة المثالية لنمو عملك</title>
+  <meta name="description" content="قارن بين خططنا الشهرية والسنوية بسهولة. احصل على أفضل أدوات استضافة الدورات والمجتمعات التعليمية مع تجربة مجانية لمدة 14 يوماً." />
+  <meta property="og:title" content="مقارنة الخطط والأسعار | اختر الخطة المثالية لنمو عملك" />
+  <meta property="og:description" content="خطط مرنة تناسب الأفراد والشركات. وفر حتى 20% عند الاشتراك السنوي." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+  <!-- Google Fonts: Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
   <style>
-    :root{
-      --bg:#f9f9f9;
-      --card:#ffffff;
-      --accent:#2a9d8f;
-      --accent-2:#e76f51;
-      --muted:#777;
-      --radius:10px;
-    }
-    *{box-sizing:border-box}
-    body{
-      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-      background:var(--bg);
-      margin:0;
-      padding:24px 12px;
-      color:#222;
-      -webkit-font-smoothing:antialiased;
-    }
-    h1{
-      text-align:center;
-      margin:8px 0 22px;
-      color:#111;
-      font-size:1.6rem;
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --primary: #0d9488;
+      --primary-hover: #0f766e;
+      --primary-light: #f0fdfa;
+      --accent: #f97316;
+      --accent-hover: #ea580c;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 16px 32px -4px rgba(13, 148, 136, 0.12), 0 6px 16px -4px rgba(0, 0, 0, 0.06);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
     }
 
-    .pricing-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:20px;
-      width:100%;
-      max-width:1100px;
-      margin:0 auto;
-      align-items:start;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .plan{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow:0 6px 18px rgba(15,15,15,0.06);
-      border:1px solid rgba(0,0,0,0.04);
-      text-align:center;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
+    body {
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 50px;
     }
 
-    .plan h2{ color:var(--accent); margin:0; font-size:1.15rem; }
-    .price{ font-size:1.9rem; color:var(--accent-2); font-weight:700; margin:6px 0; }
-    .features{ list-style:none; padding:0; margin:0; color:var(--muted); }
-    .features li{ padding:10px 0; border-top:1px solid #f1f1f1; display:flex; gap:10px; align-items:center; justify-content:center; }
-    .features li:first-child{ border-top:0; padding-top:0; }
-
-    /* CTA area */
-    .cta {
-      margin-top:12px;
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 16px;
-      border-radius:8px;
-      font-weight:600;
-      cursor:pointer;
-      text-decoration:none;
-      transition:transform .12s ease, box-shadow .12s ease;
-      border:0;
-    }
-    .btn:active{ transform:translateY(1px); }
-    .btn-primary{
-      background:linear-gradient(180deg,var(--accent) 0%, #238a78 100%);
-      color:#fff;
-      box-shadow:0 6px 18px rgba(42,157,143,0.18);
-    }
-    .btn-primary:hover{ transform:translateY(-4px); box-shadow:0 12px 30px rgba(42,157,143,0.18); }
-
-    .btn-outline{
-      background:transparent;
-      color:var(--accent);
-      border:2px solid rgba(42,157,143,0.12);
-    }
-    .btn-outline:hover{ transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.06); }
-
-    .badge{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      background:linear-gradient(90deg,#fff6f2,#fff);
-      color:var(--accent-2);
-      font-weight:700;
-      font-size:0.85rem;
-      border:1px solid rgba(231,111,81,0.12);
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    .highlight{
-      border:2px solid rgba(231,111,81,0.12);
-      background:linear-gradient(180deg,#fff7f3,#fff);
+    /* Header Section */
+    .header {
+      text-align: center;
+      padding: 48px 0 28px;
     }
 
-    footer{ text-align:center; margin:26px 0 6px; color:var(--muted); font-size:0.9rem; }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      border: 1px solid rgba(13, 148, 136, 0.2);
+      margin-bottom: 14px;
+    }
+
+    .header h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* Billing Toggle Switch */
+    .billing-toggle-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 32px 0 42px;
+    }
+
+    .billing-label {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color 0.2s ease;
+      user-select: none;
+    }
+
+    .billing-label.active {
+      color: var(--primary);
+    }
+
+    .toggle-btn {
+      width: 58px;
+      height: 32px;
+      background: #cbd5e1;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      padding: 3px;
+      transition: background-color 0.25s ease;
+      outline: none;
+    }
+
+    .toggle-btn:focus-visible {
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.35);
+    }
+
+    .toggle-btn.annual {
+      background: var(--primary);
+    }
+
+    .toggle-circle {
+      display: block;
+      width: 26px;
+      height: 26px;
+      background: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .toggle-btn.annual .toggle-circle {
+      transform: translateX(-26px);
+    }
+
+    .discount-badge {
+      background: #fed7aa;
+      color: #9a3412;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-inline-start: 4px;
+    }
+
+    /* Pricing Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 440px));
+      gap: 28px;
+      justify-content: center;
+      align-items: stretch;
+      margin-bottom: 64px;
+    }
+
+    .plan-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Featured / Pro Card */
+    .plan-card.featured {
+      border: 2px solid var(--primary);
+      background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 28%);
+      transform: scale(1.02);
+    }
+
+    .plan-card.featured:hover {
+      transform: scale(1.02) translateY(-4px);
+    }
+
+    .popular-ribbon {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, var(--accent), #ea580c);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 4px 16px;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.35);
+      letter-spacing: 0.3px;
+    }
+
+    .plan-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 22px;
+      margin-bottom: 24px;
+    }
+
+    .plan-name {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .plan-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      min-height: 42px;
+    }
+
+    /* Price tag */
+    .price-wrapper {
+      margin: 18px 0 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .price-currency {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .price-amount {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .price-period {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .billed-note {
+      font-size: 0.82rem;
+      color: var(--primary);
+      font-weight: 700;
+      min-height: 20px;
+    }
+
+    /* Feature List */
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+      flex-grow: 1;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.96rem;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    .check-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(13, 148, 136, 0.12);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .check-icon svg {
+      width: 13px;
+      height: 13px;
+      stroke-width: 2.5;
+    }
+
+    /* Buttons */
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.25);
+    }
+
+    .btn-accent:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: #cbd5e1;
+      color: #334155;
+    }
+
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* Trust Signals Bar */
+    .trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+      padding: 22px;
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      margin-bottom: 64px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .trust-item svg {
+      width: 22px;
+      height: 22px;
+      color: var(--primary);
+    }
+
+    /* Comparison Table Section */
+    .table-section {
+      margin-bottom: 64px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-title h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .comparison-table-wrapper {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      overflow-x: auto;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: right;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table th {
+      background: #f8fafc;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .comparison-table th:first-child {
+      width: 50%;
+    }
+
+    .comparison-table th:not(:first-child),
+    .comparison-table td:not(:first-child) {
+      text-align: center;
+      width: 25%;
+    }
+
+    .comparison-table td.highlight-col {
+      background: rgba(13, 148, 136, 0.03);
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .category-header td {
+      background: #f1f5f9;
+      font-weight: 800;
+      color: #334155;
+      font-size: 0.88rem;
+      letter-spacing: 0.3px;
+      padding: 10px 20px;
+    }
+
+    .check-yes {
+      color: #10b981;
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+
+    .check-no {
+      color: #cbd5e1;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto 54px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item:hover {
+      border-color: #cbd5e1;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 22px;
+      text-align: right;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--text-muted);
+      transition: transform 0.25s ease;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      padding: 0 22px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 22px 18px;
+    }
+
+    /* Modal / Pop-up */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 480px;
+      width: 100%;
+      padding: 32px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      transform: translateY(20px);
+      transition: transform 0.25s ease;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: #f1f5f9;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #64748b;
+      font-size: 1.1rem;
+      transition: background 0.15s;
+    }
+
+    .modal-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .modal-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .modal-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .modal-card h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .modal-summary {
+      background: #f8fafc;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      text-align: right;
+      font-size: 0.95rem;
+    }
+
+    .modal-summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .modal-summary-row:last-child {
+      margin-bottom: 0;
+      padding-top: 6px;
+      border-top: 1px dashed var(--border);
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 40px;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
 
     /* Responsive */
-    @media (max-width:900px){
-      .pricing-grid{ grid-template-columns:1fr; max-width:720px; }
-      .features li{ justify-content:flex-start; padding-left:18px; }
-      .cta{ flex-direction:column; gap:10px; align-items:center; }
+    @media (max-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+      }
+      .plan-card.featured {
+        transform: none;
+      }
+      .plan-card.featured:hover {
+        transform: translateY(-4px);
+      }
+      .header h1 {
+        font-size: 1.85rem;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        padding: 12px 14px;
+        font-size: 0.88rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>قارن بين خططنا واختر الأنسب</h1>
 
-  <div class="pricing-grid">
-    <!-- Basic Plan -->
-    <div class="plan" id="basic-plan">
-      <h2>الخطة الأساسية</h2>
-      <div class="price">$39<span style="font-size:0.6rem;color:var(--muted)">/شهر</span></div>
-      <ul class="features" aria-label="مميزات الخطة الأساسية">
-        <li><span>✅</span> استضافة مضمّنة</li>
-        <li><span>📧</span> بريد إلكتروني مدمج</li>
-        <li><span>🎓</span> استضافة الدورات</li>
-        <li><span>👤</span> مناسب للأفراد والفرق الصغيرة</li>
-      </ul>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="badge-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        أسعار شفافة وبسيطة 100%
+      </div>
+      <h1>اختر الخطة المناسبة لرحلة نجاحك</h1>
+      <p>ابدأ بتجربة مجانية مدتها 14 يوماً بدون الحاجة لبطاقة ائتمان. يمكنك الترقية أو الإلغاء في أي وقت بضغطة زر.</p>
 
-      <div class="cta" role="group" aria-label="خيارات الاشتراك للخطة الأساسية">
-        <a class="btn btn-primary" href="#" aria-label="اشترك الآن بالخطة الأساسية">اشترك الآن</a>
-        <a class="btn btn-outline" href="#" aria-label="ابدأ تجربة مجانية للخطة الأساسية">جرّب مجانًا</a>
+      <!-- Billing Toggle -->
+      <div class="billing-toggle-wrapper" role="region" aria-label="خيارات دورة الفوترة">
+        <span class="billing-label active" id="label-monthly">الدفع الشهري</span>
+        <button type="button" class="toggle-btn" id="billing-toggle" role="switch" aria-checked="false" aria-label="التبديل بين الدفع الشهري والسنوي">
+          <span class="toggle-circle"></span>
+        </button>
+        <span class="billing-label" id="label-annual">
+          الدفع السنوي
+          <span class="discount-badge">وفر 20% 🎉</span>
+        </span>
+      </div>
+    </header>
+
+    <!-- Pricing Cards Grid -->
+    <main class="pricing-grid">
+      
+      <!-- Basic Plan Card -->
+      <article class="plan-card" id="basic-card">
+        <div class="plan-header">
+          <h2 class="plan-name">الخطة الأساسية</h2>
+          <p class="plan-desc">الحل الأمثل للمدربين والمبدعين المستقلين لبدء إطلاق دوراتهم ومجتمعاتهم.</p>
+          <div class="price-wrapper">
+            <span class="price-currency">$</span>
+            <span class="price-amount" id="price-basic">39</span>
+            <span class="price-period">/ شهر</span>
+          </div>
+          <div class="billed-note" id="note-basic">&nbsp;</div>
+        </div>
+
+        <ul class="features-list" aria-label="مميزات الخطة الأساسية">
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span>استضافة متكاملة للدورات (حتى 3 دورات)</span>
+          </li>
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span>حتى 1,000 طالب ومشترك نشط</span>
+          </li>
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span>نظام بريد إلكتروني مدمج (5,000 رسالة/شهر)</span>
+          </li>
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span>دعم فني عبر البريد خلال 24 ساعة</span>
+          </li>
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span>شهادة أمان SSL مجانية ونطاق مخصص</span>
+          </li>
+        </ul>
+
+        <div class="cta-group">
+          <button class="btn btn-outline btn-action" data-plan="الخطة الأساسية" data-action="trial">ابدأ تجربة مجانية (14 يوماً)</button>
+          <button class="btn btn-primary btn-action" data-plan="الخطة الأساسية" data-action="subscribe">اشترك الآن</button>
+        </div>
+      </article>
+
+      <!-- Pro Plan Card -->
+      <article class="plan-card featured" id="pro-card">
+        <span class="popular-ribbon">الأكثر طلباً واختياراً ⭐</span>
+        <div class="plan-header">
+          <h2 class="plan-name">خطة المحترفين (Pro)</h2>
+          <p class="plan-desc">للشركات والمؤسسات والمدارس التعليمية الراغبة في التوسع بلا حدود.</p>
+          <div class="price-wrapper">
+            <span class="price-currency">$</span>
+            <span class="price-amount" id="price-pro">99</span>
+            <span class="price-period">/ شهر</span>
+          </div>
+          <div class="billed-note" id="note-pro">&nbsp;</div>
+        </div>
+
+        <ul class="features-list" aria-label="مميزات خطة المحترفين">
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span><strong>عدد غير محدود</strong> من الدورات والمحتوى</span>
+          </li>
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span><strong>عدد غير محدود</strong> من المشتركين والطلاب</span>
+          </li>
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span>حملات تسويقية وبريد غير محدود مع أتمتة</span>
+          </li>
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span>دعم فني فوري VIP وأولوية عبر الدردشة الحية</span>
+          </li>
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span>إزالة شعار المنصة وتخصيص العلامة التجارية بالكامل</span>
+          </li>
+          <li class="feature-item">
+            <span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+            <span>تقارير أداء متقدمة وتكامل مع Zapier و APIs</span>
+          </li>
+        </ul>
+
+        <div class="cta-group">
+          <button class="btn btn-outline btn-action" data-plan="خطة Pro" data-action="trial">ابدأ تجربة مجانية (14 يوماً)</button>
+          <button class="btn btn-accent btn-action" data-plan="خطة Pro" data-action="subscribe">اشترك الآن في Pro</button>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- Trust Signals Bar -->
+    <div class="trust-bar">
+      <div class="trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+        <span>ضمان استرداد الأموال خلال 14 يوماً</span>
+      </div>
+      <div class="trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+        <span>دفع آمن ومشفر 100% عبر Stripe</span>
+      </div>
+      <div class="trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+        <span>لا توجد عقود ملزمة — ألغِ متى شئت</span>
       </div>
     </div>
 
-    <!-- Pro Plan -->
-    <div class="plan highlight" id="pro-plan">
-      <div style="display:flex;justify-content:center;gap:10px;align-items:center;">
-        <h2 style="margin:0">خطة Pro</h2>
-        <span class="badge">الأكثر مبيعًا</span>
+    <!-- Comparison Table Section -->
+    <section class="table-section">
+      <div class="section-title">
+        <h2>مقارنة تفصيلية دقيقة بين الخطط</h2>
+        <p>اكتشف كل ميزة بالتفصيل لتحدد الخيار المناسب لطموحاتك</p>
       </div>
-      <div class="price">$99<span style="font-size:0.6rem;color:var(--muted)">/شهر</span></div>
-      <ul class="features" aria-label="مميزات خطة Pro">
-        <li><span>✅</span> استضافة مضمّنة</li>
-        <li><span>📧</span> بريد إلكتروني مدمج</li>
-        <li><span>🎓</span> استضافة الدورات مع أدوات متقدمة</li>
-        <li><span>🏢</span> مناسب للشركات والفرق الكبيرة</li>
-      </ul>
 
-      <div class="cta" role="group" aria-label="خيارات الاشتراك لخطة Pro">
-        <a class="btn btn-primary" href="#" aria-label="اشترك الآن بخطة Pro">اشترك الآن</a>
-        <a class="btn btn-outline" href="#" aria-label="ابدأ تجربة مجانية لخطة Pro">جرّب مجانًا</a>
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>الميزة / الخاصية</th>
+              <th>الخطة الأساسية</th>
+              <th class="highlight-col">خطة Pro ⭐</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="category-header">
+              <td colspan="3">المحتوى والطلاب</td>
+            </tr>
+            <tr>
+              <td>عدد الدورات التدريبية</td>
+              <td>حتى 3 دورات</td>
+              <td class="highlight-col">غير محدود</td>
+            </tr>
+            <tr>
+              <td>عدد الطلاب والمشتركين</td>
+              <td>1,000 طالب</td>
+              <td class="highlight-col">غير محدود</td>
+            </tr>
+            <tr>
+              <td>سعة تخزين الفيديوهات</td>
+              <td>50 جيجابايت</td>
+              <td class="highlight-col">غير محدودة</td>
+            </tr>
+            <tr>
+              <td>المجتمعات والنقاشات التفاعلية</td>
+              <td><span class="check-yes">✔</span></td>
+              <td class="highlight-col"><span class="check-yes">✔</span></td>
+            </tr>
+
+            <tr class="category-header">
+              <td colspan="3">التسويق والمبيعات</td>
+            </tr>
+            <tr>
+              <td>حملات البريد الإلكتروني</td>
+              <td>5,000 رسالة / شهر</td>
+              <td class="highlight-col">غير محدود</td>
+            </tr>
+            <tr>
+              <td>نظام التسويق بالعمولة (Affiliate)</td>
+              <td><span class="check-no">✕</span></td>
+              <td class="highlight-col"><span class="check-yes">✔</span></td>
+            </tr>
+            <tr>
+              <td>أكواد الخصم والكوبونات الترويجية</td>
+              <td><span class="check-yes">✔</span></td>
+              <td class="highlight-col"><span class="check-yes">✔</span></td>
+            </tr>
+            <tr>
+              <td>تخصيص الهوية بدون شعار المنصة</td>
+              <td><span class="check-no">✕</span></td>
+              <td class="highlight-col"><span class="check-yes">✔</span></td>
+            </tr>
+
+            <tr class="category-header">
+              <td colspan="3">الدعم والأمان والتقنية</td>
+            </tr>
+            <tr>
+              <td>نطاق خاص (Custom Domain)</td>
+              <td><span class="check-yes">✔</span></td>
+              <td class="highlight-col"><span class="check-yes">✔</span></td>
+            </tr>
+            <tr>
+              <td>مستوى الدعم الفني</td>
+              <td>بريد إلكتروني (24 ساعة)</td>
+              <td class="highlight-col">محادثة حية VIP فورية</td>
+            </tr>
+            <tr>
+              <td>نسخ احتياطي يومي تلقائي</td>
+              <td><span class="check-yes">✔</span></td>
+              <td class="highlight-col"><span class="check-yes">✔</span></td>
+            </tr>
+            <tr>
+              <td>الربط مع Webhooks و Zapier</td>
+              <td><span class="check-no">✕</span></td>
+              <td class="highlight-col"><span class="check-yes">✔</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="section-title">
+        <h2>الأسئلة الشائعة</h2>
+        <p>إجابات على أكثر الاستفسارات التي يطرحها عملاؤنا</p>
+      </div>
+
+      <div class="faq-item open">
+        <button class="faq-question" type="button" aria-expanded="true">
+          <span>كيف تعمل التجربة المجانية لمدة 14 يوماً؟</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="faq-answer">
+          تمنحك التجربة المجانية وصولاً كاملاً لجميع ميزات الخطة التي تختارها لمدة 14 يوماً بدون أي رسوم، وبدون الحاجة لإدخال بيانات بطاقتك الائتمانية. يمكنك في أي وقت قبل انتهاء المدة تأكيد الاشتراك أو التراجع دون أي التزام.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>هل يمكنني ترقية أو تغيير خطتي لاحقاً؟</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="faq-answer">
+          نعم بكل تأكيد! يمكنك الترقية من الخطة الأساسية إلى خطة Pro، أو التبديل بين الدفع الشهري والسنوي بنقرة واحدة من لوحة التحكم، وسيتم احتساب الفارق النسبي تلقائياً دون أي تعقيد.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>ما هي طرق الدفع المعتمدة لديكم؟</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="faq-answer">
+          نقبل جميع البطاقات الائتمانية والخصم المباشر (Visa، Mastercard، American Express)، بالإضافة إلى Apple Pay و Google Pay عبر بوابات دفع آمنة ومشفرة بالكامل بمعايير بنكية.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>هل توجد أي رسوم أو عمولات خفية على مبيعاتي؟</span>
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div class="faq-answer">
+          لا على الإطلاق! نحن لا نأخذ أي نسبة من أرباح دوراتك أو اشتراكات طلابك (0% عمولة). ما تربحه يذهب إلى حسابك البنكي مباشرة بعد خصم رسوم معالجة الدفع المعتادة لبوابة الدفع فقط.
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Ezy Compare. جميع الحقوق محفوظة | صُممت الواجهة بأعلى معايير الأداء والسرعة وسهولة الاستخدام.</p>
+    </footer>
+  </div>
+
+  <!-- Subscription / Action Modal -->
+  <div class="modal-overlay" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="إغلاق النافذة">&times;</button>
+      <div class="modal-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+      </div>
+      <h3 id="modal-title">بدء الاشتراك</h3>
+      <p id="modal-desc" style="color:var(--text-muted);font-size:0.95rem;">أنت على وشك الانطلاق بأدوات احترافية لتطوير عملك التعليمي.</p>
+
+      <div class="modal-summary">
+        <div class="modal-summary-row">
+          <span>الخطة المختارة:</span>
+          <strong id="modal-plan-name">خطة Pro</strong>
+        </div>
+        <div class="modal-summary-row">
+          <span>دورة الفوترة:</span>
+          <span id="modal-billing-cycle">دفع شهري</span>
+        </div>
+        <div class="modal-summary-row">
+          <span>الإجمالي المستحق:</span>
+          <strong id="modal-total-price">$99</strong>
+        </div>
+      </div>
+
+      <div style="margin-top:20px; display:flex; flex-direction:column; gap:10px;">
+        <button class="btn btn-primary" id="modal-confirm-btn" style="width:100%;">المتابعة إلى صفحة الدفع الآمنة</button>
+        <button class="btn btn-outline" id="modal-cancel-btn" style="width:100%;">إلغاء</button>
       </div>
     </div>
   </div>
 
-  <footer>© 2026 Skool Pricing Comparison</footer>
-
+  <!-- JavaScript Logic -->
   <script>
-    // اختياري: مثال بسيط لالتقاط نقرات الأزرار (يمكن استبدال href بروابط فعلية)
-    document.querySelectorAll('.btn-primary').forEach(btn=>{
-      btn.addEventListener('click', function(e){
-        if(this.getAttribute('href') === '#'){
-          e.preventDefault();
-          const plan = this.closest('.plan').querySelector('h2').textContent.trim();
-          alert('تم اختيار: ' + plan + '\nاستبدل رابط "#" برابط صفحة الدفع أو التسجيل لديك.');
+    // State management
+    let isAnnual = false;
+
+    const pricingData = {
+      basic: {
+        monthly: 39,
+        annualMonthly: 31,
+        annualTotal: 372
+      },
+      pro: {
+        monthly: 99,
+        annualMonthly: 79,
+        annualTotal: 948
+      }
+    };
+
+    // DOM Elements
+    const toggleBtn = document.getElementById('billing-toggle');
+    const labelMonthly = document.getElementById('label-monthly');
+    const labelAnnual = document.getElementById('label-annual');
+    const priceBasicEl = document.getElementById('price-basic');
+    const priceProEl = document.getElementById('price-pro');
+    const noteBasicEl = document.getElementById('note-basic');
+    const noteProEl = document.getElementById('note-pro');
+
+    // Modal Elements
+    const modal = document.getElementById('checkout-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalCancelBtn = document.getElementById('modal-cancel-btn');
+    const modalConfirmBtn = document.getElementById('modal-confirm-btn');
+    const modalPlanName = document.getElementById('modal-plan-name');
+    const modalBillingCycle = document.getElementById('modal-billing-cycle');
+    const modalTotalPrice = document.getElementById('modal-total-price');
+
+    // Update Pricing Display
+    function updatePrices() {
+      if (isAnnual) {
+        toggleBtn.classList.add('annual');
+        toggleBtn.setAttribute('aria-checked', 'true');
+        labelMonthly.classList.remove('active');
+        labelAnnual.classList.add('active');
+
+        priceBasicEl.textContent = pricingData.basic.annualMonthly;
+        priceProEl.textContent = pricingData.pro.annualMonthly;
+
+        noteBasicEl.textContent = 'تُدفع $' + pricingData.basic.annualTotal + ' سنوياً (وفرت $96)';
+        noteProEl.textContent = 'تُدفع $' + pricingData.pro.annualTotal + ' سنوياً (وفرت $240)';
+      } else {
+        toggleBtn.classList.remove('annual');
+        toggleBtn.setAttribute('aria-checked', 'false');
+        labelMonthly.classList.add('active');
+        labelAnnual.classList.remove('active');
+
+        priceBasicEl.textContent = pricingData.basic.monthly;
+        priceProEl.textContent = pricingData.pro.monthly;
+
+        noteBasicEl.innerHTML = '&nbsp;';
+        noteProEl.innerHTML = '&nbsp;';
+      }
+    }
+
+    // Toggle click events
+    toggleBtn.addEventListener('click', () => {
+      isAnnual = !isAnnual;
+      updatePrices();
+    });
+
+    labelMonthly.addEventListener('click', () => {
+      if (isAnnual) {
+        isAnnual = false;
+        updatePrices();
+      }
+    });
+
+    labelAnnual.addEventListener('click', () => {
+      if (!isAnnual) {
+        isAnnual = true;
+        updatePrices();
+      }
+    });
+
+    // Action buttons handler (Subscribe & Trial)
+    document.querySelectorAll('.btn-action').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const plan = this.getAttribute('data-plan');
+        const action = this.getAttribute('data-action');
+
+        modalPlanName.textContent = plan;
+        modalBillingCycle.textContent = isAnnual ? 'دفع سنوي (خصم 20%)' : 'دفع شهري';
+
+        const isPro = plan.includes('Pro');
+        if (action === 'trial') {
+          modalTotalPrice.textContent = '$0 (تجربة مجانية لمدة 14 يوماً)';
+          modalConfirmBtn.textContent = 'بدء التجربة المجانية الآن';
+        } else {
+          const finalPrice = isPro 
+            ? (isAnnual ? '$' + pricingData.pro.annualTotal + ' / سنوياً' : '$' + pricingData.pro.monthly + ' / شهرياً')
+            : (isAnnual ? '$' + pricingData.basic.annualTotal + ' / سنوياً' : '$' + pricingData.basic.monthly + ' / شهرياً');
+          modalTotalPrice.textContent = finalPrice;
+          modalConfirmBtn.textContent = 'المتابعة إلى صفحة الدفع الآمنة';
+        }
+
+        openModal();
+      });
+    });
+
+    function openModal() {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      modalCloseBtn.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalCancelBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    modalConfirmBtn.addEventListener('click', () => {
+      alert('مرحباً بك! هنا يمكنك ربط الزر برابط Stripe Checkout أو صفحة التسجيل الفعلية لديك.');
+      closeModal();
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('open');
+            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle current
+        if (isOpen) {
+          item.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
         }
       });
     });
